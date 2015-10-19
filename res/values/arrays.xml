@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<resources>  
+    <string-array name="feedback_type_list">  
+        <item>@string/feedback_type_1</item>  
+        <item>@string/feedback_type_2</item>  
+        <item>@string/feedback_type_3</item>  
+        <item>@string/feedback_type_4</item>
+        <item>@string/feedback_type_5</item>
+    </string-array>
+    
+    <string-array name="books_sort_by_list">  
+        <item>@string/books_sort_by_1</item>  
+        <item>@string/books_sort_by_2</item>  
+    </string-array>
+    
+    <string-array name="results_sort_by_list">  
+        <item>@string/songs_sort_by_1</item>  
+        <item>@string/songs_sort_by_2</item>  
+    </string-array>  
+      
+</resources>  

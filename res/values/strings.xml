@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="hello">Choose one of the features below.</string>
+
+    <string name="app_name">Bibliophile+</string>
+    <string name="description_logo">Bibliophile+</string>
+
+    <string name="description_about">About</string>
+    <string name="description_home">Home</string>
+    <string name="description_search">Search</string>
+    <string name="description_feature1">Feature 1</string>
+    <string name="description_feature2">Feature 2</string>
+    <string name="description_feature3">Feature 3</string>
+    <string name="description_feature4">Feature 4</string>
+    <string name="description_feature5">Feature 5</string>
+    <string name="description_feature6">Feature 6</string>
+    
+    <string name="title_about">About</string>
+    <string name="title_home">Home</string>
+    <string name="title_search">Search</string>
+    <string name="title_feature1">Songs Influenced by Books</string>
+    <string name="title_feature2">Browse Books</string>
+    <string name="title_feature3">Use the "+/-" widget (in the bottom left) to zoom in/zoom out</string>
+    <string name="title_feature4">Pick stats of interest</string>
+    <string name="title_feature5">Test Your Knowledge</string>
+    <string name="title_feature6">Send Us Your Ideas (Via Your Email Account)</string>
+    <string name="title_results">Select one to see its influence</string>
+    <string name="title_book_summary">Scroll through any available facts</string>
+    <string name="title_book_list">Select a book to see its overview</string>
+    <string name="title_webview"></string>
+    <string name="title_chart_tab_list">Breakdown of Influences for:</string>
+    <string name="title_topx_chart_tab_list">Top Books to Influence:</string>    
+
+    <string name="default_intro">This is the default content view for an activity. Be sure to change your activity\'s onCreate method. Use setContentView on a custom layout.</string>
+    <string name="feature1_intro">Feature 1 content goes here.</string>
+    <string name="feature2_intro">Feature 2 content goes here.</string>
+    <string name="feature3_intro">Feature 3 content goes here.</string>
+    <string name="feature4_intro">Feature 4 content goes here.</string>
+    <string name="feature5_intro">Feature 5 content goes here.</string>
+    <string name="feature6_intro">Feature 6 content goes here.</string>
+
+    <string name="about_intro">This application will teach people how books have shaped the world, including how songs have been inspired by and influenced by literature and history. It can also display quotes and song lyrics relevant to any links found. You can even search the database to find results relevant just to you!</string>
+    <string name="search_intro">Content for the Search page goes here.</string>
+    
+    <string name="submit_instructions">  If you know of an additional song, game, or other media influenced by literature, please send it.\nAlso, if you have another interesting dimension to literature, please send those ideas as well!</string>
+    <string name="feedback_name">Your Name</string>
+    <string name="feedback_address">Respond to My Other Email Address (optional)</string>
+    <string name="feedback_type_1">Submitting a New Fact about Literature/History</string>  
+    <string name="feedback_type_2">Suggesting a New Feature</string>
+    <string name="feedback_type_3">Asking a General Question</string>
+    <string name="feedback_type_4">Reporting a Bug or Issue</string>
+    <string name="feedback_type_5">Other</string>  
+    <string name="feedback_type">@string/feedback_type_1</string>
+    <string name="feedback_body">  Hey, there is this one song you should know about...</string>
+    <string name="feedback_response">  Would you like an email response?</string>
+    <string name="feedback_button">Send Feedback</string>
+    
+    <string name="sort_select_title">Select a Sorting Preference</string>
+    
+    <string name="books_sort_by_1">Sort By Work</string>  
+    <string name="books_sort_by_2">Sort By Author</string>
+    
+    <string name="songs_sort_by_1">Sort By Song</string>  
+    <string name="songs_sort_by_2">Sort By Performer</string>  
+        
+</resources>

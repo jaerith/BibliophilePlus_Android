@@ -1,2 +1,5 @@
+assets/
 bin/
 gen/
+.project
+proguard-project.txt
