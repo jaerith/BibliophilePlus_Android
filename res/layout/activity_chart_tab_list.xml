@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    >
+    
+    <LinearLayout
+        android:focusable="true" android:focusableInTouchMode="true"
+        android:layout_width="0px" android:layout_height="0px"/>
+
+    <LinearLayout style="@style/TitleBar">
+    
+        <ImageButton style="@style/TitleBarAction"
+            android:contentDescription="@string/description_home"
+            android:src="@drawable/title_home"
+            android:onClick="onClickHome" />
+
+        <ImageView style="@style/TitleBarSeparator" />
+        
+        <TextView style="@style/TitleBarText" />        
+    </LinearLayout>
+
+    <TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/tabhost"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+        >
+		    
+            <TabWidget 
+                android:id="@android:id/tabs"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+            />
+        
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+            >
+                    	        
+	            <ListView
+		            android:id="@+id/sibblist_song_types"
+		            android:layout_width="fill_parent" 
+		            android:layout_height="wrap_content"
+		            android:drawSelectorOnTop="false"
+		            android:textColor="#ff9900"
+	            />
+
+	            <ListView
+		            android:id="@+id/sibblist_book_types"
+		            android:layout_width="fill_parent" 
+		            android:layout_height="wrap_content"
+		            android:drawSelectorOnTop="false"
+		            android:textColor="#009900"		                
+	            />
+	            
+	            <ListView
+		            android:id="@+id/gibblist_game_types"
+		            android:layout_width="fill_parent" 
+		            android:layout_height="wrap_content"
+		            android:drawSelectorOnTop="false"
+		            android:textColor="#ff9900"
+	            />
+	            
+                                                
+            </FrameLayout>                
+             
+        </LinearLayout>
+        
+    </TabHost>
+    
+</LinearLayout>

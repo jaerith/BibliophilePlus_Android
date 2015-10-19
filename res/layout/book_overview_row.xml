@@ -1,0 +1,36 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="1" >
+    
+    <TextView
+        android:id="@+id/bookOverviewLabel"
+        
+        android:paddingLeft="2dip"
+        android:paddingRight="2dip"
+        android:paddingTop="20dip"
+        android:paddingBottom="20dip"
+        
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"        
+        android:gravity="center_horizontal"
+        android:layout_width="fill_parent" 
+        android:layout_height="wrap_content" 
+        
+        android:text="@string/hello"
+        android:textSize = "24sp"
+        android:textStyle = "bold"
+    />
+        
+    <ImageButton
+        android:id="@+id/bookOverviewImage"
+        android:layout_width="100dip"
+        android:layout_height="100dip"
+        android:paddingLeft="10dip"
+        android:paddingRight="5dip"
+        android:background="@drawable/right_arrow"
+        android:layout_centerVertical="true"
+        android:gravity="center_horizontal"
+    />
+</LinearLayout>

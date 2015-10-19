@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    >
+    
+    <LinearLayout style="@style/TitleBar">
+    
+        <ImageButton style="@style/TitleBarAction"
+            android:contentDescription="@string/description_home"
+            android:src="@drawable/title_home"
+            android:onClick="onClickHome" />
+
+        <ImageView style="@style/TitleBarSeparator" />
+        
+        <TextView style="@style/TitleBarText" />
+        
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="10px"
+            android:id="@+id/title_bar_reset_button"
+            android:background="@drawable/quiz_rst_button"
+            android:onClick="onClickQuizReset" />
+        
+    </LinearLayout>
+    
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/quiz_background" >
+		
+		<LinearLayout
+		    android:layout_width="wrap_content"
+		    android:layout_height="370dp"
+		    android:orientation="horizontal"
+		    android:paddingBottom="20dip"
+		    android:paddingLeft="80dip"
+		    android:paddingTop="60dip" >
+                
+           <ImageView
+               android:id="@+id/quiz_header_icon"
+               android:layout_width="142dp"
+               android:layout_height="284dp"
+               android:background="@drawable/quiz_page_logo" />
+            
+		    <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="300dip"
+                android:layout_weight="1" >
+
+               <ImageView
+                    android:id="@+id/quiz_header_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"                
+                    android:background="@drawable/quiz_page_header"
+                    android:layout_weight="1"
+                    android:paddingLeft="40dip"
+                />
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/quiz_question_text"
+		            android:text="What author inspired both the videogame Bioshock and the song Anthem by the band Rush?"
+		            android:textSize="20sp"
+		            android:textStyle="bold"
+		            android:paddingLeft="10dip"
+		            android:paddingRight="50dip"
+		            android:layout_weight="1"
+		        />
+                
+            </LinearLayout>
+            
+        </LinearLayout>
+        		    
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dip"
+            android:layout_marginLeft="32dip"
+            android:layout_marginRight="30dip"
+            android:background="@drawable/quiz_answer_key"
+            android:orientation="horizontal"
+            android:paddingBottom="10dip"
+            android:paddingLeft="20dip"
+            android:paddingRight="20dip"
+            android:paddingTop="10dip" >
+
+            <Button
+                android:id="@+id/quiz_answer_one"
+                android:layout_width="wrap_content"
+                android:layout_height="55dip"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_weight="0.84"
+                android:onClick="onClickAnswer"
+                android:paddingLeft="60dip"
+                android:paddingRight="60dip"
+                android:text="Answer One"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/quiz_answer_one_icon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/quiz_icon_wrong" 
+            />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dip"
+            android:layout_marginLeft="32dip"
+            android:layout_marginRight="30dip"
+            android:background="@drawable/quiz_answer_key"
+            android:orientation="horizontal"
+            android:paddingBottom="10dip"
+            android:paddingLeft="20dip"
+            android:paddingRight="20dip"
+            android:paddingTop="10dip" >
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="55dip"
+                android:id="@+id/quiz_answer_two"
+                android:paddingLeft="60dip"
+                android:paddingRight="60dip"
+		        android:text="Answer Two"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_gravity="center_horizontal|center_vertical"
+		        android:layout_weight="0.84"
+		        android:onClick="onClickAnswer"
+		    />
+
+            <ImageView
+                android:id="@+id/quiz_answer_two_icon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/quiz_icon_wrong" 
+            />
+		    
+		</LinearLayout>		
+		
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dip"
+            android:layout_marginLeft="32dip"
+            android:layout_marginRight="30dip"
+            android:background="@drawable/quiz_answer_key"
+            android:orientation="horizontal"
+            android:paddingBottom="10dip"
+            android:paddingLeft="20dip"
+            android:paddingRight="20dip"
+            android:paddingTop="10dip" >
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="55dip"
+                android:id="@+id/quiz_answer_three"
+                android:paddingLeft="60dip"
+                android:paddingRight="60dip"
+		        android:text="Answer Three"
+                android:textSize="15sp"
+                android:textStyle="bold"
+		        android:layout_gravity="center_horizontal|center_vertical"
+		        android:layout_weight="0.84"
+		        android:onClick="onClickAnswer"
+		    />
+		    
+            <ImageView
+                android:id="@+id/quiz_answer_three_icon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/quiz_icon_wrong" 
+            />
+		    		    
+		</LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dip"
+            android:orientation="horizontal"
+            android:paddingLeft="40dip"
+            android:paddingRight="40dip" >
+
+            <Button
+                android:id="@+id/backward_button"
+                android:layout_width="100dip"
+                android:layout_height="50dip"
+                android:layout_weight="1"
+                android:background="@drawable/quiz_bck_button"
+                android:onClick="onClickPreviousQuestion"
+                android:layout_marginLeft="10dip"
+                android:layout_marginTop="15dip"
+                android:layout_marginRight="10dip" />
+            
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="50dip"
+                android:layout_weight="2"
+                android:background="@drawable/quiz_timer"
+                android:layout_marginTop="15dip"
+                android:layout_marginRight="10dip" >
+
+                <TextView
+                    android:id="@+id/timer_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="40dip"
+                    android:text="01:01"
+                    android:textSize="25sp"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginTop="10dip"                    
+                />
+		        
+		    </LinearLayout>
+		    
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="50dip"
+                android:layout_weight="1"
+                android:background="@drawable/quiz_scoreboard"
+                android:layout_marginTop="15dip" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/score_right_text"
+		            android:text="99+"
+		            android:textSize="22sp"
+		            android:layout_weight="1"
+		            android:layout_marginLeft="35dip"
+                    android:layout_marginTop="10dip"		        
+		        />
+		        
+		        <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/score_pct_text"
+		            android:text="99%"
+		            android:textSize="18sp"
+		            android:layout_weight="1"
+                    android:layout_marginTop="10dip"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+		        />
+		        
+		        <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/score_wrong_text"
+		            android:text="99+"
+		            android:textSize="22sp"
+		            android:layout_weight="1"
+                    android:layout_marginTop="10dip"
+                    android:layout_marginRight="25dip"
+		        />
+		        
+		    </LinearLayout>
+		    
+		    <Button
+                android:layout_width="100dip"
+                android:layout_height="50dip"
+                android:id="@+id/forward_button"
+		        android:layout_weight="1"
+                android:layout_marginLeft="10dip"
+                android:layout_marginTop="15dip"
+                android:layout_marginRight="10dip"
+		        android:background="@drawable/quiz_fwd_button"
+		        android:onClick="onClickNextQuestion"
+		    />
+		            
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/more_about_answer_button"
+            android:layout_width="246dp"
+            android:layout_height="66dp"
+            android:layout_marginBottom="10dip"
+            android:layout_marginLeft="185dip"
+            android:layout_marginTop="20dip"
+            android:background="@drawable/quiz_maba_button"
+            android:gravity="center_horizontal|right"
+            android:onClick="onClickMoreAboutAnswer"
+            android:paddingBottom="20dip"
+            android:paddingLeft="20dip" />
+           
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="80dip"
+            android:layout_marginLeft="233dip"
+            android:layout_marginTop="15dip"            
+            android:gravity="center_horizontal|right"
+            android:id="@+id/reset_button"
+            android:paddingBottom="20dip"
+            android:paddingLeft="450dip"
+            android:background="@drawable/quiz_rst_button"
+            android:onClick="onClickQuizReset" />
+         
+    </LinearLayout>
+
+</LinearLayout>

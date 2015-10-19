@@ -1,0 +1,31 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+>
+    <ImageButton
+        android:id="@+id/gamebookchoice"
+        android:layout_width="40px"
+        android:layout_height="40px"       
+        android:paddingLeft="5px"
+        android:paddingRight="5px"
+        android:paddingTop="5px"
+        android:background="@drawable/book"
+        android:layout_marginTop="5dip"
+        android:layout_marginBottom="5dip"
+        android:layout_alignParentRight="true"    
+    />
+    <TextView
+        android:id="@+id/gamelabel"
+        android:paddingLeft="2px"
+        android:paddingRight="2px"
+        android:paddingTop="2px"
+        android:layout_width="wrap_content" 
+        android:layout_height="fill_parent" 
+        android:text="@string/hello"
+        android:textSize = "20sp"
+        android:textStyle = "bold"
+        android:layout_alignParentLeft="true"        
+        android:layout_toLeftOf="@id/gamebookchoice"
+    />
+</RelativeLayout>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/abs_root"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+    
+    <LinearLayout style="@style/TitleBar">
+    
+        <ImageButton style="@style/TitleBarAction"
+            android:contentDescription="@string/description_home"
+            android:src="@drawable/title_home"
+            android:onClick="onClickHome" />
+
+        <ImageView style="@style/TitleBarSeparator" />
+        <TextView style="@style/TitleBarText" />
+        
+        <ImageButton android:id="@+id/purchase_button" 
+            style="@style/TitleBarAction"
+            android:src="@drawable/purchase"
+            android:onClick="onClickPurchase" />        
+        
+        <ImageButton style="@style/TitleBarAction"
+            android:src="@drawable/email"
+            android:onClick="onClickEmail" />
+        
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:padding="6dip" >
+
+        <LinearLayout
+            android:id="@+id/book_layer"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="250dip"
+            android:layout_weight="1" >
+            
+            <TextView
+                android:id="@+id/sel_book_label"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"                
+                android:layout_gravity="top"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:paddingTop="10dip"
+                android:paddingLeft="10dip"                
+                
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                android:textColor="@color/title_background"
+                
+                android:text="Selected Book: " 
+            />
+		    
+	        <ListView
+		        android:id="@+id/sel_book_list"
+		        android:layout_width="fill_parent" 
+		        android:layout_height="wrap_content"
+		        
+		        android:layout_gravity="top"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+	        />
+		    
+        </LinearLayout>
+        
+        <ImageView 
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="@color/title_background" />
+    
+        <LinearLayout
+            android:id="@+id/sibb_layer"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="300dip"
+            android:layout_weight="1" >
+                
+            <TextView
+		        android:id="@+id/infl_songs_label"
+		        android:layout_width="fill_parent"
+                android:layout_height="wrap_content"		        
+		        android:layout_gravity="top"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:paddingTop="20dip"
+                android:paddingLeft="10dip"
+                
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                android:textColor="@color/title_background"
+
+		        android:text="Influenced Songs: "                		        
+		    />
+		    
+	        <ListView
+		        android:id="@+id/infl_songs_list"
+		        android:layout_width="fill_parent" 
+		        android:layout_height="wrap_content"
+		        
+		        android:layout_gravity="top"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+	        />
+        </LinearLayout>
+        
+        <ImageView 
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="@color/title_background" />        
+
+        <LinearLayout
+            android:id="@+id/gibb_layer"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="300dip"
+            android:layout_weight="1" >
+                
+            <TextView
+		        android:id="@+id/infl_games_label"
+		        android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+		        android:layout_gravity="top"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:paddingTop="20dip"
+                android:paddingLeft="10dip"
+                
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                android:textColor="@color/title_background"
+
+                android:text="Influenced Games: "                		        
+		    />
+		    
+	        <ListView
+		        android:id="@+id/infl_games_list"
+		        android:layout_width="fill_parent" 
+		        android:layout_height="wrap_content"
+		        
+		        android:layout_gravity="top"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+	         />
+        </LinearLayout>
+        
+        <ImageView 
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="@color/title_background" />
+                
+        <LinearLayout
+            android:id="@+id/quotes_layer"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="400dip"
+            android:layout_weight="1" >
+                
+            <TextView
+		        android:id="@+id/quotes_label"
+		        android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+		        android:layout_gravity="top"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:paddingTop="20dip"
+                android:paddingLeft="10dip"
+
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                android:textColor="@color/title_background"
+
+		        android:text="Available Quotes: "
+		    />
+		    
+	        <ListView
+		        android:id="@+id/avail_quotes_list"
+		        android:layout_width="fill_parent" 
+		        android:layout_height="wrap_content"
+		        
+		        android:layout_gravity="top"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+	         />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
