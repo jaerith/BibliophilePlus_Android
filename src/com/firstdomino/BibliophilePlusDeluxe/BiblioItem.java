@@ -10,6 +10,7 @@ package com.firstdomino.BibliophilePlusDeluxe;
  */
 public class BiblioItem
 {
+
 	public String sBookData;
 	public String sOtherData;
 	public String sMiscData;
