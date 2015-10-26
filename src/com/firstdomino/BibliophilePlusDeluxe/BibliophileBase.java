@@ -16,7 +16,8 @@ import java.util.*;
 
 /**
  * This class provides a common set of functionality and data (i.e., the main cache) that supports 
- * the various Activity classes of the Android application.
+ * the various Activity classes of the Android application.  Most of these routines are only called
+ * during the initialization of the app.
  * 
  * (The argument could be made that it should have been a singleton class.) 
  */
