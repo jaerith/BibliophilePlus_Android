@@ -17,7 +17,8 @@ import android.graphics.Color;
  * For example, one pie chart may show that our database's breakdown for classic rock has 
  * 25% influenced by classic fiction, 20% influenced by fantasy, 15% influenced by science fiction, etc.  
  * 
- * This class is used solely by the F4Activity class.
+ * This class is used solely by the ChartTabListActivity and ChartTopXTabListActivity classes (which are
+ * employed under the F4Activity class).
  */
 public class ChartStatsActivity extends ChartActivityBase {
 	
@@ -42,7 +43,7 @@ public class ChartStatsActivity extends ChartActivityBase {
 	}
 
     /**
-     * This class will generate the correct Android Intent class for pie chart generation, which
+     * This method will generate the correct Android Intent class for pie chart generation, which
      * which will then be used by the caller to call "startActivity()" in order to actually create
      * the pie chart (via the listening third-party library).
      * 
