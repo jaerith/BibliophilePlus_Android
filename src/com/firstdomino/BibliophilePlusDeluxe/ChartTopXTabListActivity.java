@@ -38,16 +38,14 @@ import java.util.regex.*;
 /**
  * This class represents a screen that is created as one of the user's choices 
  * on the F4Activity screen.  It will display a series of tabs and rows that allow 
- * the user to invoke charts for the breakdown of a specific subcategory (based on genre).
+ * the user to invoke charts of the top 5 influential books for a specific genre.
  * 
- * For example, one pie chart may show that the database's breakdown for classic rock has 
- * 25% influenced by classic fiction, 20% influenced by fantasy, 15% influenced by science fiction, etc.
- * Another pie chart may show that the database's breakdown for RPG games has 60% influenced by fantasy,
- * 10% influenced by science fiction, etc.
+ * For example, one pie chart may show that the database's top 5 influential books for classic rock are 
+ * The Bible (10%), Lord of the Rings (5%), etc.
  * 
  * This class is used solely by the F4Activity class.
  */
-public class ChartTabListActivity extends DashboardActivity 
+public class ChartTopXTabListActivity extends DashboardActivity 
 {
     private static ArrayList<RowModel> generalModelList  = new ArrayList<RowModel>();
 	private static ArrayList<RowModel> songTypeModelList = new ArrayList<RowModel>();
@@ -68,7 +66,7 @@ public class ChartTabListActivity extends DashboardActivity
      * 
      * @param savedInstanceState Data that represents the state of the app
      * @return Nothing
-     */
+     */	
 	protected void onCreate(Bundle savedInstanceState) 
 	{
 	    super.onCreate(savedInstanceState);
@@ -119,34 +117,25 @@ public class ChartTabListActivity extends DashboardActivity
         spec.setContent(R.id.sibblist_song_types);
         spec.setIndicator("Song Types");
         tabs.addTab(spec);
-
-        spec = tabs.newTabSpec("tag2");
-        spec.setContent(R.id.sibblist_book_types);
-        spec.setIndicator("Book Types");
-        tabs.addTab(spec);
         
-        spec = tabs.newTabSpec("tag3");
+        spec = tabs.newTabSpec("tag2");
         spec.setContent(R.id.gibblist_game_types);
         spec.setIndicator("Game Types");
         tabs.addTab(spec);
-
+        
         sibbList_song_types = (ListView) findViewById(R.id.sibblist_song_types);
-        sibbList_book_types = (ListView) findViewById(R.id.sibblist_book_types);
         gibbList_game_types = (ListView) findViewById(R.id.gibblist_game_types);
 
         sibbList_song_types.setAdapter(new SelectTypeAdapter(songTypeModelList, 
         		                                             SelectTypeAdapter.CONST_TYPE_LIST_SONGS) );
-        
-        sibbList_book_types.setAdapter(new SelectTypeAdapter(bookTypeModelList, 
-												             SelectTypeAdapter.CONST_TYPE_LIST_BOOKS) );
-        
+                
         gibbList_game_types.setAdapter(new SelectTypeAdapter(gameTypeModelList, 
-                                                             SelectTypeAdapter.CONST_TYPE_LIST_GAMES) );
+                                                             SelectTypeAdapter.CONST_TYPE_LIST_GAMES) );        
 	}
 
     /**
      * Under Construction
-     */
+     */	
 	public void onClickSearch (View v) {
 
 		/*
@@ -160,7 +149,7 @@ public class ChartTabListActivity extends DashboardActivity
      * 
      * @param gameType The target name for the specific genre of games
      * @return The ID of the image that represents that game genre
-     */
+     */	
 	public static int getGameTypeImageIcon(String gameType) {
 		
 		if ( gameType == null) {
@@ -199,7 +188,7 @@ public class ChartTabListActivity extends DashboardActivity
      * 
      * @param songType The target name for the specific genre of songs
      * @return The ID of the image that represents that song genre
-     */
+     */	
 	public static int getSongTypeImageIcon(String songType) {
 		
 		if ( songType == null) {
@@ -241,9 +230,9 @@ public class ChartTabListActivity extends DashboardActivity
 	/**
 	 * This subclass serves as the logical view for each displayed list within a tab of this Activity.
 	 * A list will allow the user to interact with its contained rows.  For instance, if the user
-	 * selects Classic Rock in the Songs tab, it will first collect data about Classic Rock and then
-	 * invoke a pie chart with that data (via the ChartStatsActivity class).
-	 */			
+	 * selects Classic Rock in the Songs tab, it will first collect the relevant data about Classic Rock 
+	 * and then invoke a pie chart with that data (via the ChartStatsActivity class).
+	 */	
     class SelectTypeAdapter extends ArrayAdapter<RowModel> {
     	
     	public static final int CONST_TYPE_LIST_SONGS = 1;
@@ -254,7 +243,7 @@ public class ChartTabListActivity extends DashboardActivity
     	
     	SelectTypeAdapter(ArrayList<RowModel> list, int type) {
     		    		
-    		super(ChartTabListActivity.this, R.layout.select_type_row, list);
+    		super(ChartTopXTabListActivity.this, R.layout.select_type_row, list);
     		
     		listType = type;
     	}
@@ -303,70 +292,58 @@ public class ChartTabListActivity extends DashboardActivity
 								String  SubTypeVal  = "";
 								String  ScreenTitle = "";
 								
-								String[] statTitles = null;
-							    double[] statValues = null;
+								String[]                statTitles = null;
+							    double[]                statValues = null;
+							    HashMap<String,Integer> oTopValues = null;
 								
 								SubTypeVal =
 								    SelectTypeAdapter.this.getItem(myPosition).toString();
-																
+								
 								if (SelectTypeAdapter.this.listType == SelectTypeAdapter.CONST_TYPE_LIST_SONGS)
-								{																		
-									Set<String> setBookTypeIds = BibliophileBase.bookTypeMap.keySet();
+								{									
+									oTopValues = 
+										   BibliophileBase.getSongTypeTop5(SubTypeVal);
 									
-									statTitles = new String[setBookTypeIds.size()];
+									statTitles = new String[oTopValues.size()];
+									statValues = new double[oTopValues.size()];
 									
-									int nBookTypeIdx = 0;
-									for (String sTmpBookTypeId : setBookTypeIds) {										
-										statTitles[nBookTypeIdx] = BibliophileBase.bookTypeMap.get(sTmpBookTypeId);
-									    ++nBookTypeIdx;
+									int nStatIdx = 0;
+									for (String sTitle : oTopValues.keySet()) {
+										
+										statTitles[nStatIdx] = sTitle;
+										statValues[nStatIdx] = oTopValues.get(sTitle).doubleValue();
+										
+										++nStatIdx;
 								    }
 									
-									statValues = 
-										   BibliophileBase.getSongTypeStats(SubTypeVal, statTitles);
-									
-									ScreenTitle = "Breakdown of Influences for " + SubTypeVal + " Songs";											
-								}
-								else if (SelectTypeAdapter.this.listType == SelectTypeAdapter.CONST_TYPE_LIST_BOOKS)
-								{
-									Set<String> setSongTypeIds = BibliophileBase.songTypeMap.keySet();
-																		
-									statTitles = new String[setSongTypeIds.size()];
-									
-									int nSongTypeIdx = 0;
-									for (String sTmpSongTypeId : setSongTypeIds) {										
-										statTitles[nSongTypeIdx] = BibliophileBase.songTypeMap.get(sTmpSongTypeId);
-									    ++nSongTypeIdx;
-								    }
-									
-									statValues =
-											BibliophileBase.getBookTypeStats(SubTypeVal, statTitles);
-									
-									ScreenTitle = "Breakdown of Songs Inspired by " + SubTypeVal;											
+									ScreenTitle = "Top 5 Books to Influence " + SubTypeVal + " Songs";											
 								}
 								else if (SelectTypeAdapter.this.listType == SelectTypeAdapter.CONST_TYPE_LIST_GAMES)
 								{
-									Set<String> setBookTypeIds = BibliophileBase.bookTypeMap.keySet();
+									oTopValues = 
+											   BibliophileBase.getGameTypeTop5(SubTypeVal);
 									
-									statTitles = new String[setBookTypeIds.size()];
+								    statTitles = new String[oTopValues.size()];
+									statValues = new double[oTopValues.size()];
 									
-									int nBookTypeIdx = 0;
-									for (String sTmpBookTypeId : setBookTypeIds) {										
-										statTitles[nBookTypeIdx] = BibliophileBase.bookTypeMap.get(sTmpBookTypeId);
-									    ++nBookTypeIdx;
-								    }
-																		
-									statValues = 
-											   BibliophileBase.getGameTypeStats(SubTypeVal, statTitles);
+									int nStatIdx = 0;
+									for (String sTitle : oTopValues.keySet()) {
 										
-									ScreenTitle = "Breakdown of Influences for " + SubTypeVal + " Games";
+										statTitles[nStatIdx] = sTitle;
+										statValues[nStatIdx] = oTopValues.get(sTitle).doubleValue();
+										
+										++nStatIdx;
+								    }
+										
+									ScreenTitle = "Top 5 Books to Influence " + SubTypeVal + " Games";
 								}
 
 								try {
-								    startActivity(ChartTabListActivity.statsActivity.execute(ChartTabListActivity.this, ScreenTitle, statTitles, statValues));
+								    startActivity(ChartTopXTabListActivity.statsActivity.execute(ChartTopXTabListActivity.this, ScreenTitle, statTitles, statValues));
 								}
 								catch (Throwable t) {
 									
-									new AlertDialog.Builder(ChartTabListActivity.this)
+									new AlertDialog.Builder(ChartTopXTabListActivity.this)
 									.setTitle("DEBUG")
 									.setMessage("ERROR!  Could not create stats chart for (" + ScreenTitle + ")\n\n" + t.toString())
 									.setNeutralButton("Done", new DialogInterface.OnClickListener() {
@@ -383,7 +360,7 @@ public class ChartTabListActivity extends DashboardActivity
 			    }
     			catch (Throwable t) {
     				
-    				new AlertDialog.Builder(ChartTabListActivity.this)
+    				new AlertDialog.Builder(ChartTopXTabListActivity.this)
     				.setTitle("Warning")
     				.setMessage("Request failed: "+t)
     				.setNeutralButton("Done", new DialogInterface.OnClickListener() {
@@ -421,3 +398,4 @@ public class ChartTabListActivity extends DashboardActivity
     }    
     
 } // end class
+
