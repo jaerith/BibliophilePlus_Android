@@ -14,9 +14,12 @@ import android.webkit.WebViewClient;
 import android.widget.Toast;
 
 /**
- * This class is used by the F3Activity to display the Google Map web page that allows users
- * to interact with it.  By interacting with it, users are then able to learn about books
- * that are set in physical locations throughout the world.
+ * Most importantly, this class is used by the F3Activity to display the Google Map 
+ * web page that allows users to interact with it.  By interacting with it, users 
+ * are then able to learn about books that are set in physical locations throughout 
+ * the world.
+ * 
+ * However, this class is also used to display general web pages to the user.
  */
 public class WebViewActivity extends DashboardActivity 
 {
