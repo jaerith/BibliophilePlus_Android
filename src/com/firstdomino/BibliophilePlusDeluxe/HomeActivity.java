@@ -31,8 +31,8 @@ import org.apache.http.impl.client.*;
  *            
  *            F5Activity Button                        F6Activity Button
  *
- * F1Activity -> Allows the user to generally browse all books
- * F2Activity -> Allows the user to look through the trivia data (songs influenced by books, etc.)
+ * F1Activity -> Allows the user to generally browse our catalog's books
+ * F2Activity -> Allows the user to dig deeper into the catalog, specifically the trivia data (songs influenced by books, etc.)
  * F3Activity -> Allows the user to discover books' settings using a Google Map
  * F4Activity -> Allows the user to look at charts showing statistics about the trivia data
  * F5Activity -> Allows the user to play a game using the trivia data
@@ -58,8 +58,9 @@ public class HomeActivity extends DashboardActivity
 	public static final String sSuppQuoteUrl   = "";
 
     /**
-     * Standard Android method called to invoke the Activity class.  It will prepare
-     * the various tabs that are to be presented to the user.
+     * Standard Android method called to invoke the Activity class.  This method will
+     * be the starting point for the entire application, initializing the data cache
+     * and making other necessary preparations.  
      * 
      * @param savedInstanceState Data that represents the state of the app
      * @return Nothing

@@ -57,8 +57,7 @@ public abstract class DashboardActivity extends Activity
     public static final String CONST_GIBB_GTYPE_SIM          = "Simulator";
 
     /**
-     * Standard Android method called to invoke the Activity class.  It will prepare
-     * the various tabs that are to be presented to the user.
+     * Standard Android method called to invoke the Activity class.
      * 
      * @param savedInstanceState Data that represents the state of the app
      * @return Nothing
