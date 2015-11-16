@@ -25,11 +25,11 @@ import org.apache.http.impl.client.*;
  * on its face, where each button will then correspond to the invocation of one F*Activity class.
  * The buttons will appear the following layout in the home screen:
  * 
- *            F1Activity Button                        F2Activity Button
+ *            F1Activity Button (Browse Books)                        F2Activity Button (Discover Influences)
  *            
- *            F3Activity Button                        F4Activity Button
+ *            F3Activity Button (Explore Your World)                  F4Activity Button (Analyze the Charts)
  *            
- *            F5Activity Button                        F6Activity Button
+ *            F5Activity Button (Test Your Knowledge)                 F6Activity Button (Send Us Your Ideas)
  *
  * F1Activity -> Allows the user to generally browse our catalog's books
  * F2Activity -> Allows the user to dig deeper into the catalog, specifically the trivia data (songs influenced by books, etc.)
