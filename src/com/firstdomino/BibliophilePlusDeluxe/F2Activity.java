@@ -240,7 +240,7 @@ public class F2Activity extends DashboardActivity
 			nImageId = getBookTypeImageIcon(model.toString());
     		
             wrapper.getTypeImage().setBackgroundResource( nImageId );           
-    		    		    		    		
+
     		return (row);
         }
     }    
