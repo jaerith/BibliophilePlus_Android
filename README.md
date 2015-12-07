@@ -13,5 +13,10 @@ was never tested with any device with a different screen size.)
 # Notices
 The trivia data itself has been omitted from the project, since I would prefer to keep that separate.
 
+# Getting Started
+These pages will help to provide a better understanding of the app:
+* <a target="_blank" href="https://github.com/jaerith/BibliophilePlus_Android/wiki/Overview">Overview</a>
+* <a target="_blank" href="https://github.com/jaerith/BibliophilePlus_Android/tree/master/screenshots">Screenshots</a>
+
 <br/>
 Copyright © 2012-2015 Aaron Kendall under the <a target="_blank" href="https://github.com/jaerith/BibliophilePlus_Android/blob/master/LICENSE">GNU General Public License</a>.
