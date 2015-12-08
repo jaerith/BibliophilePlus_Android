@@ -17,6 +17,7 @@ The trivia data itself has been omitted from the project, since I would prefer t
 These pages will help to provide a better understanding of the app:
 * <a target="_blank" href="https://github.com/jaerith/BibliophilePlus_Android/wiki/Overview">Overview</a>
 * <a target="_blank" href="https://github.com/jaerith/BibliophilePlus_Android/tree/master/screenshots">Screenshots</a>
+* <a target="_blank" href="https://github.com/jaerith/BibliophilePlus_Android/wiki/Data-Sources">Data Sources</a>
 
 <br/>
 Copyright © 2012-2015 Aaron Kendall under the <a target="_blank" href="https://github.com/jaerith/BibliophilePlus_Android/blob/master/LICENSE">GNU General Public License</a>.
